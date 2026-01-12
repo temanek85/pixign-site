@@ -1,16 +1,219 @@
 ---
+const currentWork = [
+  {
+    icon: '[Email envelope with AI sparkles, purple gradient background]',
+    title: 'AI-Driven Email Marketing',
+    description: 'Managing campaigns, audience analysis, automated landing pages, content strategy with AI assistance'
+  },
+  {
+    icon: '[Code editor with lightning bolt, rapid prototype screens]',
+    title: 'Rapid Prototyping & MVP Development',
+    description: 'Building functional prototypes in days using Claude Code, ChatGPT, and Cursor'
+  },
+  {
+    icon: '[Analytics dashboard with growth charts, audience graphs]',
+    title: 'Marketing Automation & Analytics',
+    description: 'Look-alike audience targeting, campaign optimization, and data-driven insights'
+  },
+  {
+    icon: '[Gear mechanism with automation flow, server infrastructure]',
+    title: 'Process Automation',
+    description: 'Server setup, code evaluation, and business tools that save time and money'
+  },
+  {
+    icon: '[Video camera with play button, social media feed]',
+    title: 'Video Content for Advertising',
+    description: 'Creating promotional videos and ad content using AI tools and creative workflows'
+  }
+];
 
+const projects = [
+  {
+    title: 'Look-Alike Audience Tool',
+    description: 'Building AI-powered audience targeting system for marketing campaigns with advanced data analysis',
+    status: 'In Progress',
+    statusClass: 'in-progress',
+    tech: 'Python, Claude API, Data Analysis'
+  },
+  {
+    title: 'Email Marketing Automation',
+    description: 'Automated campaign management with AI-generated content, performance analytics, and landing page creation',
+    status: 'Active',
+    statusClass: 'active',
+    tech: 'Claude, Analytics, HTML/CSS Generation'
+  },
+  {
+    title: 'AI Landing Page Generator',
+    description: 'Automated landing page creation with custom SVG illustrations, responsive design, and styled content',
+    status: 'Active',
+    statusClass: 'active',
+    tech: 'Claude, SVG Generation, Responsive Design'
+  }
+];
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixign - AI-Powered Digital Product Development & Marketing Automation</title>
+    <meta name="description" content="Pixign specializes in AI-powered business solutions, email marketing automation, rapid MVP development, and process optimization. Combining product management expertise with cutting-edge AI tools.">
+    <meta name="keywords" content="AI automation, email marketing, MVP development, product management, Claude AI, business automation, digital marketing, prototyping, video content creation">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Pixign Logo" class="logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#work">What We Do</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Building Business Solutions with AI-Powered Workflows</h1>
+                <p class="hero-subtitle">We combine product management expertise with cutting-edge AI tools to create marketing automation systems, rapid prototypes, video content, and efficient business applications that drive measurable results.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="what-i-do">
+        <div class="container">
+            <h2 class="section-title center">What We Do</h2>
+            <p class="section-intro">Current focus areas combining product management with AI capabilities</p>
+            <div class="features-grid">
+                {currentWork.map(item => (
+                    <div class="feature-card">
+                        <div class="feature-icon">{item.icon}</div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="approach">
+        <div class="container">
+            <h2 class="section-title center">How We Work</h2>
+            <div class="approach-content">
+                <div class="approach-item">
+                    <h3>AI-Augmented Development</h3>
+                    <p>Using Claude Code, ChatGPT, and Cursor to build prototypes and MVPs rapidly. We validate ideas quickly before heavy investment, creating functional prototypes in days instead of months, saving thousands in development costs while maintaining quality.</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Data-Driven Marketing</h3>
+                    <p>We apply rigorous A/B testing and analytics to marketing campaigns. Analyzing past performance, identifying patterns, and using AI to optimize content strategy, timing, and audience targeting. Every decision backed by data, not assumptions.</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Process Automation</h3>
+                    <p>Identifying repetitive tasks and automating them. From server setup to code evaluation, landing page generation to content creation - if it can be systematized, we build tools to handle it, saving hours and enabling efficient operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title center">Current Projects</h2>
+            <p class="section-intro">Real-world applications we're building with AI assistance</p>
+            <div class="projects-grid">
+                {projects.map(project => (
+                    <div class="project-card">
+                        <h3>{project.title}</h3>
+                        <p class="project-description">{project.description}</p>
+                        <div class="project-tech">{project.tech}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="tools">
+        <div class="container">
+            <h2 class="section-title center">Tools & Technologies</h2>
+            <p class="section-intro">Tech stack for AI-powered product development</p>
+            <div class="tools-grid">
+                <div class="tool-category">
+                    <h4>AI & Development</h4>
+                    <div class="tool-tags">
+                        <span class="tag">Claude (Anthropic)</span>
+                        <span class="tag">ChatGPT</span>
+                        <span class="tag">Claude Code</span>
+                        <span class="tag">Cursor</span>
+                        <span class="tag">Windsurf</span>
+                        <span class="tag">Midjourney</span>
+                        <span class="tag">ElevenLabs</span>
+                    </div>
+                </div>
+                <div class="tool-category">
+                    <h4>Marketing & Analytics</h4>
+                    <div class="tool-tags">
+                        <span class="tag">Google Analytics</span>
+                        <span class="tag">Google Ads</span>
+                        <span class="tag">Facebook Ads</span>
+                        <span class="tag">Email Marketing</span>
+                        <span class="tag">A/B Testing</span>
+                    </div>
+                </div>
+                <div class="tool-category">
+                    <h4>Technical Stack</h4>
+                    <div class="tool-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Astro</span>
+                        <span class="tag">React</span>
+                    </div>
+                </div>
+                <div class="tool-category">
+                    <h4>Project Management</h4>
+                    <div class="tool-tags">
+                        <span class="tag">Agile/Scrum</span>
+                        <span class="tag">Scrumban</span>
+                        <span class="tag">Jira</span>
+                        <span class="tag">Notion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <a href="https://www.linkedin.com/in/temanek" target="_blank" rel="noopener" class="btn btn-primary">
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Pixign. Building AI-powered business solutions.</p>
+        </div>
+    </footer>
+</body>
 </html>

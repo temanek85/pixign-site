@@ -1,0 +1,534 @@
+/* ===============================================
+   GLOBAL STYLES - Clean & Modern
+   =============================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #FFFFFF;
+    --bg-soft: #FAFAFA;
+    --text: #0F172A;
+    --text-muted: #64748B;
+    --primary: #6366F1;
+    --primary-hover: #4F46E5;
+    
+    /* Pastel colors for cards */
+    --mint: #D1FAE5;
+    --blue: #DBEAFE;
+    --yellow: #FEF3C7;
+    --pink: #FCE7F3;
+    --peach: #FED7AA;
+    --lavender: #E9D5FF;
+    
+    --container-width: 1200px;
+    --section-padding: 120px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    color: var(--text-muted);
+}
+
+/* ===============================================
+   NAVIGATION
+   =============================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #E2E8F0;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ===============================================
+   HERO SECTION - Clean serif like Image 3
+   =============================================== */
+.hero {
+    padding: 160px 0 var(--section-padding);
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: 4.5rem;
+    margin-bottom: 24px;
+    color: var(--text);
+    /* NO gradient - clean serif */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* ===============================================
+   BUTTONS
+   =============================================== */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: #E2E8F0;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ===============================================
+   SECTIONS
+   =============================================== */
+section {
+    padding: var(--section-padding) 0;
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+.section-title.center {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 60px;
+    margin-top: -40px;
+}
+
+/* ===============================================
+   WHAT I DO - Blob cards like Image 2
+   =============================================== */
+.what-i-do {
+    background: var(--bg-soft);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.feature-card {
+    background: white;
+    padding: 48px 40px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Blob background */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50% 40% 60% 50%;
+    opacity: 0.15;
+    top: -50px;
+    right: -50px;
+    z-index: 0;
+}
+
+.feature-card:nth-child(1)::before {
+    background: var(--mint);
+}
+
+.feature-card:nth-child(2)::before {
+    background: var(--blue);
+}
+
+.feature-card:nth-child(3)::before {
+    background: var(--yellow);
+}
+
+.feature-card:nth-child(4)::before {
+    background: var(--pink);
+}
+
+.feature-card:nth-child(5)::before {
+    background: var(--peach);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card p {
+    font-size: 0.9375rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================================
+   PROJECTS SECTION - Styled cards
+   =============================================== */
+.projects {
+    background: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 40px 32px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.project-header h3 {
+    flex: 1;
+    margin-right: 16px;
+}
+
+.project-status {
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.project-status.in-progress {
+    background: #F59E0B;
+}
+
+.project-description {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.project-tech {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ===============================================
+   TOOLS SECTION
+   =============================================== */
+.tools {
+    background: var(--bg-soft);
+}
+
+.tools-grid {
+    display: grid;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tool-category h4 {
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tag {
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid #E2E8F0;
+    color: var(--text);
+}
+
+/* ===============================================
+   CONTACT SECTION
+   =============================================== */
+.contact {
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-description {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.contact-item {
+    font-size: 1.125rem;
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+.footer {
+    background: var(--text);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===============================================
+   RESPONSIVE
+   =============================================== */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 80px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .features-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===============================================
+   LOGO
+   =============================================== */
+.logo-image {
+    height: 40px;
+    width: auto;
+}
+
+/* ===============================================
+   ABOUT SECTION
+   =============================================== */
+.about {
+    background: var(--bg-soft);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    margin-bottom: 60px;
+}
+
+.about-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 60px;
+}
+
+.stat-card {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #E2E8F0;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ===============================================
+   APPROACH SECTION
+   =============================================== */
+.approach {
+    background: white;
+}
+
+.approach-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+}
+
+.approach-item h3 {
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.approach-item p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
