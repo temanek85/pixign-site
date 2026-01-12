@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@900&amp;display=swap');
+      .logo-text { 
+        font-family: 'Archivo', sans-serif; 
+        font-weight: 900; 
+        font-size: 52px; 
+        fill: #7C5CE0;
+      }
+    </style>
+  </defs>
+  
+  <text x="10" y="58" class="logo-text">⟨Pixign⟩</text>
+</svg>

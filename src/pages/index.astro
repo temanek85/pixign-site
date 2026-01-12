@@ -1,27 +1,27 @@
 ---
 const currentWork = [
   {
-    icon: '[Email envelope with AI sparkles, purple gradient background]',
+    image: '/images/ai-email-marketing.jpg',
     title: 'AI-Driven Email Marketing',
     description: 'Managing campaigns, audience analysis, automated landing pages, content strategy with AI assistance'
   },
   {
-    icon: '[Code editor with lightning bolt, rapid prototype screens]',
+    image: '/images/rapid-prototyping.jpg',
     title: 'Rapid Prototyping & MVP Development',
     description: 'Building functional prototypes in days using Claude Code, ChatGPT, and Cursor'
   },
   {
-    icon: '[Analytics dashboard with growth charts, audience graphs]',
+    image: '/images/analytics-dashboard.jpg',
     title: 'Marketing Automation & Analytics',
     description: 'Look-alike audience targeting, campaign optimization, and data-driven insights'
   },
   {
-    icon: '[Gear mechanism with automation flow, server infrastructure]',
+    image: '/images/gear-with-automation.jpg',
     title: 'Process Automation',
     description: 'Server setup, code evaluation, and business tools that save time and money'
   },
   {
-    icon: '[Video camera with play button, social media feed]',
+    image: '/images/video-camera-with-play-button.jpg',
     title: 'Video Content for Advertising',
     description: 'Creating promotional videos and ad content using AI tools and creative workflows'
   }
@@ -33,7 +33,7 @@ const projects = [
     description: 'Building AI-powered audience targeting system for marketing campaigns with advanced data analysis',
     status: 'In Progress',
     statusClass: 'in-progress',
-    tech: 'Python, Claude API, Data Analysis'
+    tech: 'Python, Gemini API, Data Analysis'
   },
   {
     title: 'Email Marketing Automation',
@@ -69,7 +69,7 @@ const projects = [
     <nav class="nav">
         <div class="container nav-content">
             <div class="logo">
-                <img src="/images/logo.png" alt="Pixign Logo" class="logo-image">
+                <img src="/images/logo.svg" alt="Pixign Logo" class="logo-image">
             </div>
             <ul class="nav-links">
                 <li><a href="#work">What We Do</a></li>
@@ -99,7 +99,9 @@ const projects = [
             <div class="features-grid">
                 {currentWork.map(item => (
                     <div class="feature-card">
-                        <div class="feature-icon">{item.icon}</div>
+                        <div class="feature-image">
+                            <img src={item.image} alt={item.title} />
+                        </div>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
                     </div>
@@ -130,7 +132,7 @@ const projects = [
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title center">Current Projects</h2>
+            <h2 class="section-title center">Projects</h2>
             <p class="section-intro">Real-world applications we're building with AI assistance</p>
             <div class="projects-grid">
                 {projects.map(project => (
@@ -199,13 +201,12 @@ const projects = [
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title">Get in Touch</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <a href="https://www.linkedin.com/in/temanek" target="_blank" rel="noopener" class="btn btn-primary">
-                            Connect on LinkedIn
-                        </a>
-                    </div>
-                </div>
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -213,6 +214,7 @@ const projects = [
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Pixign. Building AI-powered business solutions.</p>
+            <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
         </div>
     </footer>
 </body>
