@@ -69,8 +69,15 @@ const projects = [
     <nav class="nav">
         <div class="container nav-content">
             <div class="logo">
-                <img src="/images/logo.svg" alt="Pixign Logo" class="logo-image">
+                <a href="/" class="logo-link">
+                    <span class="logo-bracket">&lang;</span><span class="logo-p">P</span><span class="logo-text">ixign</span><span class="logo-bracket">&rang;</span><span class="logo-cursor">_</span>
+                </a>
             </div>
+            <button class="burger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#work">What We Do</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -202,6 +209,7 @@ const projects = [
             <div class="contact-content">
                 <h2 class="section-title">Get in Touch</h2>
                 <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <input type="hidden" name="form-name" value="contact" />
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -217,5 +225,39 @@ const projects = [
             <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
         </div>
     </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        let lastScrollY = 0;
+
+        // Scroll handler for logo animation
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            if (scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            lastScrollY = scrollY;
+        });
+
+        // Burger menu toggle
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
