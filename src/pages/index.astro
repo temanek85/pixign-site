@@ -1,9 +1,9 @@
 ---
 const currentWork = [
   {
-    image: '/images/ai-email-marketing.jpg',
-    title: 'AI-Driven Email Marketing',
-    description: 'Managing campaigns, audience analysis, automated landing pages, content strategy with AI assistance'
+    image: '/images/ai-agents-creation.jpg',
+    title: 'AI Agents Development',
+    description: 'Building intelligent autonomous agents that automate complex workflows and decision-making processes'
   },
   {
     image: '/images/rapid-prototyping.jpg',
@@ -19,6 +19,11 @@ const currentWork = [
     image: '/images/gear-with-automation.jpg',
     title: 'Process Automation',
     description: 'Server setup, code evaluation, and business tools that save time and money'
+  },
+  {
+    image: '/images/ai-email-marketing.jpg',
+    title: 'AI-Driven Email Marketing',
+    description: 'Managing campaigns, audience analysis, automated landing pages, content strategy with AI assistance'
   },
   {
     image: '/images/video-camera-with-play-button.jpg',
@@ -207,8 +212,9 @@ const projects = [
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title">Get in Touch</h2>
-                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
                     <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
