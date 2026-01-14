@@ -657,70 +657,23 @@ section {
 /* ===============================================
    LOGO
    =============================================== */
-.logo-image {
-    height: 90px;
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.logo-icon {
+    height: 43px;
     width: auto;
 }
 
-/* Animated Logo */
-.logo-link {
-    text-decoration: none;
-    font-family: 'Courier New', monospace;
-    font-size: 2.8rem;
+.logo-brand {
+    font-family: 'Noto Sans Sora Sompeng', sans-serif;
     font-weight: 700;
+    font-size: 3.5rem;
     color: #7C5CE0;
-    display: flex;
-    align-items: center;
-}
-
-.logo-bracket {
-    color: #7C5CE0;
-}
-
-.logo-p {
-    color: #7C5CE0;
-}
-
-.logo-text {
-    color: #7C5CE0;
-    display: inline-block;
-    max-width: 150px;
-    overflow: hidden;
-    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
-    white-space: nowrap;
-    font-size: inherit;
-}
-
-.logo-cursor {
-    color: #7C5CE0;
-    animation: blink 1s step-end infinite;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-/* Collapsed state when scrolled */
-.nav.scrolled .logo-text {
-    max-width: 0;
-    opacity: 0;
-}
-
-.nav.scrolled .logo-cursor {
-    opacity: 1;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Terminal typing effect on expand */
-.nav:not(.scrolled) .logo-text {
-    animation: typeIn 0.4s steps(5) forwards;
-}
-
-@keyframes typeIn {
-    from { max-width: 0; }
-    to { max-width: 150px; }
 }
 
 /* ===============================================
